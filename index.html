@@ -80,7 +80,7 @@ document.getElementById("styles").innerHTML=DATA.styles.map((x,i)=>`<div class="
 }
 function fontFor(style,size){let m={script:`600 ${size}px "Brush Script MT","Segoe Script",cursive`,serif:`700 ${Math.round(size*.70)}px Georgia,serif`,minimal:`700 ${Math.round(size*.48)}px Arial,sans-serif`,delicate:`600 ${Math.round(size*.56)}px "Trebuchet MS",sans-serif`,bold:`950 ${Math.round(size*.60)}px Arial,sans-serif`,cute:`700 ${Math.round(size*.60)}px "Comic Sans MS",cursive`};return m[style]}
 async function makeTextBlob(text,style,color){
-let c=document.createElement("canvas"),ctx=c.getContext("2d");c.width=1600;c.height=700;ctx.clearRect(0,0,c.width,c.height);
+let c=document.createElement("canvas"),ctx=c.getContext("2d");c.width=2400;c.height=1000;ctx.clearRect(0,0,c.width,c.height);
 ctx.textAlign="center";ctx.textBaseline="middle";let size=112;ctx.font=fontFor(style,size);
 let words=text.split(/\s+/),lines=[""],max=1350;
 for(let w of words){let t=(lines.at(-1)+" "+w).trim();if(lines.at(-1)&&ctx.measureText(t).width>max)lines.push(w);else lines[lines.length-1]=t}
